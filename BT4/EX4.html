@@ -2,215 +2,217 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bài tập 04</title>
+    <title>Bai tap 4</title>
+    <style>
+        body { background: #f5f5f5; }
+        body, input, select, textarea, button {
+            font-family: inherit;
+        }
+        .form-wrapper {
+            background: #fff;
+            border: 6px solid #ededed;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 18px 18px 0 18px;
+            box-sizing: border-box;
+        }
+        h3 {
+            margin: 18px 0 10px 0;
+            font-size: 20px;
+            font-weight: bold;
+            border-bottom: 2px solid #888;
+            padding-bottom: 2px;
+        }
+        .form-table { width: 100%; border-collapse: collapse; }
+        .form-table td { padding: 6px 8px 6px 0; vertical-align: top; }
+        .form-table input[type="text"],
+        .form-table input[type="email"],
+        .form-table input[type="date"],
+        .form-table select {
+            width: 98%; padding: 4px 6px; font-size: 15px;
+            border: 1px solid #888; border-radius: 2px;
+        }
+        .form-table textarea {
+            width: 98%; height: 90px; font-size: 15px;
+            border: 1px solid #888; border-radius: 2px; resize: vertical;
+        }
+        .form-table .radio-group { display: flex; flex-direction: column; gap: 2px; }
+        .form-table .checkbox-group { display: flex; flex-direction: column; gap: 2px; }
+        .form-table .captcha {
+            font-family: 'Courier New', monospace; font-size: 28px;
+            letter-spacing: 4px; font-weight: bold; color: #444;
+        }
+        .form-table .toolbar {
+            background: #f8f8f8; border: 1px solid #bbb; border-bottom: none;
+            padding: 4px 6px; margin-bottom: 0;
+        }
+        .form-table .toolbar button {
+            background: #fff; border: 1px solid #bbb; margin-right: 2px;
+            font-size: 13px; padding: 2px 6px; cursor: pointer;
+        }
+        .form-actions { text-align: right; padding: 12px 0 12px 0; }
+        .form-actions button {
+            background: #444; color: #fff; border: 1px solid #222; border-radius: 2px;
+            padding: 6px 18px; font-size: 15px; margin-left: 6px; cursor: pointer;
+        }
+        .form-actions button.cancel { background: #888; border: 1px solid #666; }
+        .required { color: #c00; font-size: 13px; }
+        .note { color: #888; font-size: 13px; }
+        .nav-btns { padding: 8px 0 0 0; }
+        .nav-btns button {
+            background: #fff; border: 1px solid #888; border-radius: 2px;
+            font-size: 18px; padding: 2px 10px; margin-right: 2px; cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <form action="#" method="POST">
-        <h2>Basic Info</h2>
-        <hr>
-        
-        <table border="0" cellpadding="5" cellspacing="0" width="600">
+<div class="form-wrapper">
+    <form>
+        <h3>Basic Info</h3>
+        <table class="form-table">
             <tr>
-                <td width="180" align="right"><b>Employee ID</b></td>
-                <td><input type="text" name="employee_id" value="9" size="50" readonly></td>
+                <td>Employee ID</td>
+                <td><input type="text" value="9" readonly style="background:#f5f5f5;"></td>
             </tr>
-            
             <tr>
-                <td align="right"><b>Last Name</b></td>
-                <td><input type="text" name="last_name" value="Dodsworth" size="50" required></td>
+                <td>Last Name</td>
+                <td>Dodsworth</td>
             </tr>
-            
             <tr>
-                <td align="right"><b>First Name</b></td>
-                <td><input type="text" name="first_name" value="Anne" size="50" required> 📋</td>
+                <td>First Name</td>
+                <td><input type="text" value="Anne"></td>
             </tr>
-            
             <tr>
-                <td align="right" valign="top"><b>Gender</b></td>
-                <td>
-                    <input type="radio" name="gender" value="male"> Male<br>
-                    <input type="radio" name="gender" value="female"> Female<br>
-                    <input type="radio" name="gender" value="xxx"> XXX<br>
-                    <input type="radio" name="gender" value="zzz" checked> ZZZ
+                <td>Gender</td>
+                <td class="radio-group">
+                    <label><input type="radio" name="gender"> Male</label>
+                    <label><input type="radio" name="gender"> Female</label>
+                    <label><input type="radio" name="gender"> XXX</label>
+                    <label><input type="radio" name="gender" checked> ZZZ</label>
                 </td>
             </tr>
-            
             <tr>
-                <td align="right"><b>Title</b></td>
-                <td><input type="text" name="title" value="Sales Representative" size="50"></td>
+                <td>Title</td>
+                <td><input type="text" value="Sales Representative"></td>
             </tr>
-            
             <tr>
-                <td align="right"><b>Suffix</b></td>
-                <td><input type="text" name="suffix" value="Ms." size="50"></td>
+                <td>Suffix</td>
+                <td><input type="text" value="Ms."></td>
             </tr>
-            
             <tr>
-                <td align="right"><b>BirthDate</b></td>
-                <td><input type="text" name="birth_date" value="1969-07-02 00:00:00" size="50"> ❓</td>
+                <td>BirthDate</td>
+                <td><input type="text" value="1969-07-02 00:00:00"></td>
             </tr>
-            
             <tr>
-                <td align="right"><b>HireDate</b></td>
-                <td><input type="text" name="hire_date" value="1994-11-15 00:00:00" size="50"></td>
+                <td>HireDate</td>
+                <td><input type="text" value="1994-11-15 00:00:00"> <span class="note">(?)</span></td>
             </tr>
-            
             <tr>
-                <td align="right"><b>SSN # (if applicable)</b></td>
-                <td><input type="text" name="ssn" size="50"> 🔍</td>
+                <td>SSN # (if applicable)</td>
+                <td></td>
             </tr>
-            
             <tr>
-                <td align="right"><b>Reports To</b></td>
+                <td>Reports To</td>
                 <td>
-                    <select name="reports_to" size="1">
-                        <option value="buchanan" selected>Buchanan</option>
-                        <option value="smith">Smith</option>
-                        <option value="jones">Jones</option>
+                    <select>
+                        <option>Buchanan</option>
                     </select>
                 </td>
             </tr>
         </table>
-        
-        <br><br>
-        <h2>Contact Info</h2>
-        <hr>
-        
-        <table border="0" cellpadding="5" cellspacing="0" width="600">
+        <h3>Contact Info</h3>
+        <table class="form-table">
             <tr>
-                <td width="180" align="right"><b>Email</b></td>
-                <td><input type="email" name="email" placeholder="name@example.com" size="50"></td>
+                <td>Email</td>
+                <td><input type="email" value="name@example.com" readonly style="background:#f5f5f5;"></td>
             </tr>
-            
             <tr>
-                <td align="right"><b>Address</b></td>
-                <td><input type="text" name="address" value="7 Houndstooth Rd." size="50"></td>
+                <td>Address</td>
+                <td><input type="text" value="7 Houndstooth Rd."></td>
             </tr>
-            
             <tr>
-                <td align="right"><b>City</b></td>
-                <td><input type="text" name="city" value="London" size="50"></td>
+                <td>City</td>
+                <td><input type="text" value="London"></td>
             </tr>
-            
             <tr>
-                <td align="right"><b>Region</b></td>
-                <td><input type="text" name="region" size="50"></td>
+                <td>Region</td>
+                <td><input type="text"></td>
             </tr>
-            
             <tr>
-                <td align="right"><b>Postal Code</b></td>
-                <td><input type="text" name="postal_code" value="WG2 7LT" size="50"></td>
+                <td>Postal Code</td>
+                <td><input type="text" value="WG2 7LT"></td>
             </tr>
-            
             <tr>
-                <td align="right"><b>Country</b></td>
+                <td>Country</td>
                 <td>
-                    <select name="country" size="1">
-                        <option value="russian_federation" selected>Russian Federation</option>
-                        <option value="usa">USA</option>
-                        <option value="uk">UK</option>
-                        <option value="vietnam">Vietnam</option>
+                    <select>
+                        <option>Russian Federation</option>
                     </select>
                 </td>
             </tr>
-            
             <tr>
-                <td align="right"><b>US Home Phone</b></td>
-                <td><input type="text" name="phone" value="(234)234-2342" size="50"></td>
+                <td>US Home Phone</td>
+                <td><input type="text" value="(234)234-2342"></td>
             </tr>
-            
             <tr>
-                <td align="right"><b>Photo</b></td>
-                <td><input type="text" name="photo" value="EmpID9.bmp" size="50"></td>
+                <td>Photo</td>
+                <td><input type="text" value="EmpID9.bmp"></td>
             </tr>
         </table>
-        
-        <br><br>
-        <h2>Optional Info</h2>
-        <hr>
-        
-        <table border="0" cellpadding="5" cellspacing="0" width="600">
+        <h3>Optional Info</h3>
+        <table class="form-table">
             <tr>
-                <td width="180" align="right" valign="top"><b>Notes</b></td>
+                <td>Notes</td>
                 <td>
-                    <table border="1" cellpadding="2" cellspacing="0" bgcolor="#f0f0f0">
-                        <tr>
-                            <td>
-                                <button type="button"><b>B</b></button>
-                                <button type="button"><i>I</i></button>
-                                <button type="button"><u>U</u></button>
-                                <button type="button"><s>S</s></button>
-                                <button type="button">≡</button>
-                                <button type="button">≡</button>
-                                <button type="button">≡</button>
-                                <button type="button">⇦</button>
-                                <button type="button">⇨</button>
-                                <button type="button">•</button>
-                                <button type="button">1.</button>
-                                <button type="button">🔗</button>
-                                <button type="button">🖼️</button>
-                                <button type="button">📹</button>
-                                <button type="button">H1</button>
-                                <button type="button">H2</button>
-                                <button type="button">H3</button>
-                                <button type="button">❌</button>
-                            </td>
-                        </tr>
-                    </table>
-                   <textarea name="notes" rows="6" cols="60">Anne has a BA degree in English from St. Lawrence College. She is fluent in French and German.ZZZ</textarea>
+                    <div class="toolbar">
+                        <button type="button"><b>B</b></button>
+                        <button type="button"><i>I</i></button>
+                        <button type="button"><u>U</u></button>
+                        <button type="button">•</button>
+                        <button type="button">1.</button>
+                        <button type="button">H1</button>
+                        <button type="button">H2</button>
+                        <button type="button">H3</button>
+                        <button type="button" style="color:#c00;">✖</button>
+                        <button type="button">↶</button>
+                        <button type="button">↷</button>
+                        <button type="button">🔗</button>
+                        <button type="button">⛶</button>
+                    </div>
+                    <textarea>Anne has a BA degree in English from St. Lawrence College.
+She is fluent in French and German.ZZZ</textarea>
                 </td>
             </tr>
-            
             <tr>
-                <td align="right"><b>Preferred Shift</b></td>
-                <td>
-                    <input type="checkbox" name="shift_regular"> Regular
-                    <input type="checkbox" name="shift_gravy" checked> Gravy Yard
+                <td>Preferred Shift</td>
+                <td class="checkbox-group">
+                    <label><input type="checkbox"> Regular</label>
+                    <label><input type="checkbox" checked> Gravy Yard</label>
                 </td>
             </tr>
-            
             <tr>
-                <td align="right"><b>Active?</b></td>
-                <td>
-                    <input type="checkbox" name="active" checked>
-                </td>
+                <td>Active?</td>
+                <td><input type="checkbox" checked></td>
             </tr>
-            
             <tr>
-                <td align="right" valign="top"><b>Are you human?</b></td>
+                <td>Are you human?</td>
                 <td>
-                    <table border="0" cellpadding="0" cellspacing="0">
-                        <tr>
-                            <td bgcolor="#f0f0f0" border="1">
-                                <h1><tt>&nbsp;T I D A W O&nbsp;</tt></h1>
-                            </td>
-                            <td>&nbsp;&nbsp;<a href="#"><small>Click to change</small></a></td>
-                        </tr>
-                    </table>
-                    <br>
-                    <input type="text" name="captcha" size="60" placeholder="Nhập mã CAPTCHA">
+                    <div class="captcha">TIDAWO</div>
+                    <div style="margin: 6px 0 6px 0; color:#444; cursor:pointer;">Click to change</div>
+                    <input type="text" style="width:98%;">
                 </td>
             </tr>
         </table>
-        
-        <br><br>
-        <table border="0" cellpadding="5" cellspacing="0" width="600">
-            <tr>
-                <td width="50%">
-                    <button type="button">◀</button>
-                    <button type="button">▶</button>
-                </td>
-                <td width="50%" align="right">
-                    <button type="submit">📄 Submit</button>
-                    <button type="button">✖ Cancel</button>
-                </td>
-            </tr>
-        </table>
-        
-        <br>
-        <small>* required</small>
-        
+        <div class="form-actions">
+            <button type="submit">Submit</button>
+            <button type="button" class="cancel">Cancel</button>
+        </div>
+        <div class="nav-btns">
+            <button type="button">◀</button>
+            <button type="button">▶</button>
+        </div>
+        <div class="note" style="padding:8px 0 8px 0;">* required</div>
     </form>
+</div>
 </body>
 </html>
