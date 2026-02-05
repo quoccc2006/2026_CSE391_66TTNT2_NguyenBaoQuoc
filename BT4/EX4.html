@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 04</title>
+</head>
+<body>
+    <form action="#" method="POST">
+        <h2>Basic Info</h2>
+        <hr>
+        
+        <table border="0" cellpadding="5" cellspacing="0" width="600">
+            <tr>
+                <td width="180" align="right"><b>Employee ID</b></td>
+                <td><input type="text" name="employee_id" value="9" size="50" readonly></td>
+            </tr>
+            
+            <tr>
+                <td align="right"><b>Last Name</b></td>
+                <td><input type="text" name="last_name" value="Dodsworth" size="50" required></td>
+            </tr>
+            
+            <tr>
+                <td align="right"><b>First Name</b></td>
+                <td><input type="text" name="first_name" value="Anne" size="50" required> 📋</td>
+            </tr>
+            
+            <tr>
+                <td align="right" valign="top"><b>Gender</b></td>
+                <td>
+                    <input type="radio" name="gender" value="male"> Male<br>
+                    <input type="radio" name="gender" value="female"> Female<br>
+                    <input type="radio" name="gender" value="xxx"> XXX<br>
+                    <input type="radio" name="gender" value="zzz" checked> ZZZ
+                </td>
+            </tr>
+            
+            <tr>
+                <td align="right"><b>Title</b></td>
+                <td><input type="text" name="title" value="Sales Representative" size="50"></td>
+            </tr>
+            
+            <tr>
+                <td align="right"><b>Suffix</b></td>
+                <td><input type="text" name="suffix" value="Ms." size="50"></td>
+            </tr>
+            
+            <tr>
+                <td align="right"><b>BirthDate</b></td>
+                <td><input type="text" name="birth_date" value="1969-07-02 00:00:00" size="50"> ❓</td>
+            </tr>
+            
+            <tr>
+                <td align="right"><b>HireDate</b></td>
+                <td><input type="text" name="hire_date" value="1994-11-15 00:00:00" size="50"></td>
+            </tr>
+            
+            <tr>
+                <td align="right"><b>SSN # (if applicable)</b></td>
+                <td><input type="text" name="ssn" size="50"> 🔍</td>
+            </tr>
+            
+            <tr>
+                <td align="right"><b>Reports To</b></td>
+                <td>
+                    <select name="reports_to" size="1">
+                        <option value="buchanan" selected>Buchanan</option>
+                        <option value="smith">Smith</option>
+                        <option value="jones">Jones</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        
+        <br><br>
+        <h2>Contact Info</h2>
+        <hr>
+        
+        <table border="0" cellpadding="5" cellspacing="0" width="600">
+            <tr>
+                <td width="180" align="right"><b>Email</b></td>
+                <td><input type="email" name="email" placeholder="name@example.com" size="50"></td>
+            </tr>
+            
+            <tr>
+                <td align="right"><b>Address</b></td>
+                <td><input type="text" name="address" value="7 Houndstooth Rd." size="50"></td>
+            </tr>
+            
+            <tr>
+                <td align="right"><b>City</b></td>
+                <td><input type="text" name="city" value="London" size="50"></td>
+            </tr>
+            
+            <tr>
+                <td align="right"><b>Region</b></td>
+                <td><input type="text" name="region" size="50"></td>
+            </tr>
+            
+            <tr>
+                <td align="right"><b>Postal Code</b></td>
+                <td><input type="text" name="postal_code" value="WG2 7LT" size="50"></td>
+            </tr>
+            
+            <tr>
+                <td align="right"><b>Country</b></td>
+                <td>
+                    <select name="country" size="1">
+                        <option value="russian_federation" selected>Russian Federation</option>
+                        <option value="usa">USA</option>
+                        <option value="uk">UK</option>
+                        <option value="vietnam">Vietnam</option>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+                <td align="right"><b>US Home Phone</b></td>
+                <td><input type="text" name="phone" value="(234)234-2342" size="50"></td>
+            </tr>
+            
+            <tr>
+                <td align="right"><b>Photo</b></td>
+                <td><input type="text" name="photo" value="EmpID9.bmp" size="50"></td>
+            </tr>
+        </table>
+        
+        <br><br>
+        <h2>Optional Info</h2>
+        <hr>
+        
+        <table border="0" cellpadding="5" cellspacing="0" width="600">
+            <tr>
+                <td width="180" align="right" valign="top"><b>Notes</b></td>
+                <td>
+                    <table border="1" cellpadding="2" cellspacing="0" bgcolor="#f0f0f0">
+                        <tr>
+                            <td>
+                                <button type="button"><b>B</b></button>
+                                <button type="button"><i>I</i></button>
+                                <button type="button"><u>U</u></button>
+                                <button type="button"><s>S</s></button>
+                                <button type="button">≡</button>
+                                <button type="button">≡</button>
+                                <button type="button">≡</button>
+                                <button type="button">⇦</button>
+                                <button type="button">⇨</button>
+                                <button type="button">•</button>
+                                <button type="button">1.</button>
+                                <button type="button">🔗</button>
+                                <button type="button">🖼️</button>
+                                <button type="button">📹</button>
+                                <button type="button">H1</button>
+                                <button type="button">H2</button>
+                                <button type="button">H3</button>
+                                <button type="button">❌</button>
+                            </td>
+                        </tr>
+                    </table>
+                   <textarea name="notes" rows="6" cols="60">Anne has a BA degree in English from St. Lawrence College. She is fluent in French and German.ZZZ</textarea>
+                </td>
+            </tr>
+            
+            <tr>
+                <td align="right"><b>Preferred Shift</b></td>
+                <td>
+                    <input type="checkbox" name="shift_regular"> Regular
+                    <input type="checkbox" name="shift_gravy" checked> Gravy Yard
+                </td>
+            </tr>
+            
+            <tr>
+                <td align="right"><b>Active?</b></td>
+                <td>
+                    <input type="checkbox" name="active" checked>
+                </td>
+            </tr>
+            
+            <tr>
+                <td align="right" valign="top"><b>Are you human?</b></td>
+                <td>
+                    <table border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td bgcolor="#f0f0f0" border="1">
+                                <h1><tt>&nbsp;T I D A W O&nbsp;</tt></h1>
+                            </td>
+                            <td>&nbsp;&nbsp;<a href="#"><small>Click to change</small></a></td>
+                        </tr>
+                    </table>
+                    <br>
+                    <input type="text" name="captcha" size="60" placeholder="Nhập mã CAPTCHA">
+                </td>
+            </tr>
+        </table>
+        
+        <br><br>
+        <table border="0" cellpadding="5" cellspacing="0" width="600">
+            <tr>
+                <td width="50%">
+                    <button type="button">◀</button>
+                    <button type="button">▶</button>
+                </td>
+                <td width="50%" align="right">
+                    <button type="submit">📄 Submit</button>
+                    <button type="button">✖ Cancel</button>
+                </td>
+            </tr>
+        </table>
+        
+        <br>
+        <small>* required</small>
+        
+    </form>
+</body>
+</html>
