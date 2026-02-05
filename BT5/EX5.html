@@ -21,7 +21,7 @@
         </div>
         <div class="container">
             <h2>Employee</h2>
-            <button class="add-btn">+ Add</button>
+            <button class="add-btn" id="addBtn">+ Add</button>
             <table>
                 <thead>
                     <tr>
@@ -80,7 +80,7 @@
         </div>
 
     </div>
-    <div class="modal">
+    <div class="modal" id="employeeModal">
         <div class="modal-content">
             <div class="modal-header">
                 <span>New Employee</span>
@@ -121,9 +121,65 @@
             </div>
             <div class="modal-footer">
                 <button class="save-btn">Save</button>
-                <button class="cancel-btn">Cancel</button>
+                <button class="cancel-btn" id="cancelBtn">Cancel</button>
             </div>
         </div>
     </div>
+    <script>
+        // Lấy các phần tử
+        const modal = document.getElementById('employeeModal');
+        const addBtn = document.getElementById('addBtn');
+        const cancelBtn = document.getElementById('cancelBtn');
+
+        // Khi click vào nút Add, hiện modal
+        addBtn.onclick = function() {
+            modal.style.display = 'block';
+            // Reset form khi thêm mới
+            document.querySelector('.modal-body form').reset();
+            document.querySelector('.modal-header span').textContent = 'New Employee';
+        }
+
+        // Khi click vào nút Cancel, ẩn modal
+        cancelBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        // Xử lý nút Delete
+        const deleteButtons = document.querySelectorAll('.delete-btn');
+        deleteButtons.forEach(function(btn) {
+            btn.onclick = function() {
+                if(confirm('Bạn có chắc chắn muốn xóa nhân viên này?')) {
+                    // Xóa hàng chứa nút delete này
+                    this.closest('tr').remove();
+                }
+            }
+        });
+
+        // Xử lý nút Edit
+        const editButtons = document.querySelectorAll('.edit-btn');
+        editButtons.forEach(function(btn) {
+            btn.onclick = function() {
+                // Lấy thông tin từ hàng hiện tại
+                const row = this.closest('tr');
+                const name = row.cells[1].textContent;
+                const email = row.cells[2].textContent;
+                const phone = row.cells[3].textContent;
+                const position = row.cells[4].textContent;
+
+                // Điền vào form
+                const form = document.querySelector('.modal-body form');
+                form.querySelectorAll('input[type="text"]')[0].value = name;
+                form.querySelectorAll('input[type="text"]')[1].value = email;
+                form.querySelectorAll('input[type="text"]')[2].value = phone;
+                form.querySelector('select').value = position;
+
+                // Đổi tiêu đề modal
+                document.querySelector('.modal-header span').textContent = 'Edit Employee';
+
+                // Hiện modal
+                modal.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>
